@@ -1,5 +1,3 @@
-package dungeon;
-
 public class RoomBST {
     private BSTNode root;
 

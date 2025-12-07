@@ -1,5 +1,3 @@
-package direction;
-
 public class DirectionStack {
     private DirectionNode top;
     public DirectionStack() { 

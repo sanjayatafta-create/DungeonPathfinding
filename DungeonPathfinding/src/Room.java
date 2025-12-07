@@ -1,5 +1,3 @@
-package dungeon;
-
 public class Room {
     private int id;
     private String name;
