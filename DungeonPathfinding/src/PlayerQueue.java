@@ -1,5 +1,3 @@
-package history;
-
 public class PlayerQueue {
     private QueueNode front;
     private QueueNode rear;
