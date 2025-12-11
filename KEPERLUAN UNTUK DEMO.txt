@@ -1,0 +1,85 @@
+KEPERLUAN UNTUK DEMO
+>>> Masukkan username player: terserah
+(Tekan Enter)
+
+input | Langkah Awal
+1     |(Lihat sekeliling - melihat pintu keluar)
+2     |(Bergerak)
+t     |(Timur ke Great Hall)
+4     |(Jelajahi ruangan)
+2     |(Bergerak)
+u     |(Utara ke Storage Room)
+4     |(Jelajahi - lihat Old Map)
+5     |(Ambil item - Old Map)
+4     |(Jelajahi lagi - lihat Healing Potion)
+5     |(Ambil item - Healing Potion)
+
+input | Jelajah senjata armor
+2     |(Bergerak)
+s     |(Selatan kembali ke Great Hall)
+2     |(Bergerak)
+t     |(Timur ke Armory)
+4     |(Jelajahi - lihat Iron Sword & Steel Shield)
+5     |(Ambil item - Iron Sword)
+5     |(Ambil item - Steel Shield)
+
+input | jelajah dan kalahkan monster
+3     |(Cari ruangan by ID)
+25    |(Cari Throne Room untuk Crown)
+4     |(Jelajahi ruangan saat ini)
+2     |(Bergerak)
+t     |(Timur ke Dark Tunnel)
+4     |(Jelajahi)
+6     |(Serang monster - Cave Troll)
+y     |(Ya serang)
+
+input | untuk demo inventori
+7     |(Lihat inventory - semua item)
+8     |(Lihat history perjalanan)
+9     |(Lihat log aksi)
+11    |(Gunakan item)
+Healing Potion (jika HP rendah)
+
+input | lanjut misi Utama cari crown
+2     |(Bergerak)
+u     |(Utara ke Crystal Cave)
+4     |(Jelajahi)
+5     |(Ambil item - Diamond)
+2     |(Bergerak)
+t     |(Timur ke Throne Room)
+4     |(Jelajahi - lihat Crown)
+5     |(Ambil item - Crown of Kings)
+6     |(Serang monster - Dark Knight)
+y     |(Ya serang)
+
+input | cari harta
+13    |(Lihat peta - karena sudah punya Old Map)
+2     |(Bergerak)
+s     |(Selatan ke Royal Treasury)
+4     |(Jelajahi - lihat Gold Coins)
+5     |(Ambil item - Gold Coins)
+
+input | jual item dan istirahat
+12    |(Jual item) "Mysterious Meat" (jual item bernilai rendah)
+14    |(Istirahat - heal HP)
+15    |(Status game - lihat progress)
+
+input | cari dan lawan naga :))
+2     |(Bergerak)
+t     |(Timur ke Dragon's Lair)
+4     |(Jelajahi - lihat Dragon)
+6     |(Serang monster - Ancient Dragon)
+y     |(Ya serang - dengan bonus Crown)
+
+input | untuk beberapa fitur seperti undo dll
+10    |(Undo langkah - jika ingin kembali)
+3     |(Cari ruangan by ID)
+50    |(Cari Dragon's Lair)
+4     |(Jelajahi semua ruangan yang belum)
+5     |(Ambil item tersisa)
+
+input | selesaikan game
+6     |(Serang monster terakhir)
+y     |(Ya serang)
+16    |(Exit game)
+y     |(Ya keluar)
