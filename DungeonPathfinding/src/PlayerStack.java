@@ -1,22 +1,30 @@
 public class PlayerStack {
     private StackNode top;
-    public PlayerStack() { top = null; }
+    public PlayerStack() { 
+        top = null; 
+    }
     public void push(String info) { 
         StackNode n = new StackNode(info); 
         n.next = top; 
         top = n; 
     }
     public String pop() { 
-        if (top == null) return null; 
+        if (top == null) {
+            return null;
+        }
         String v = top.info; 
         top = top.next; 
         return v; 
     }
     public String peek() { 
-        if (top == null) return null; 
+        if (top == null) {
+            return null;
+        } 
         return top.info; 
     }
-    public boolean isEmpty() { return top == null; }
+    public boolean isEmpty() { 
+        return top == null; 
+    }
     
     public int size() {
         int count = 0;

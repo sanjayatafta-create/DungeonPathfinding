@@ -19,18 +19,25 @@ public class Player {
 
     public void changeHp(int delta) { 
         hp += delta; 
-        if (hp > 100) hp = 100;  // TAMBAH BATAS MAKSIMAL
-        if (hp < 0) hp = 0; 
+        if (hp > 100) {
+            hp = 100;
+        }
+        if (hp < 0) {
+            hp = 0;
+        } 
     }
 
-    public int getGold() { return this.gold; }
+    public int getGold() { 
+        return this.gold; 
+    }
 
     public void addGold(int g) { 
         gold += g; 
-        if (gold < 0) gold = 0;  // TAMBAH CEK NEGATIF
+        if (gold < 0) {
+            gold = 0;
+        }
     }
 
-    // TAMBAH METHOD BARU
     public void setGold(int g) { 
         this.gold = g; 
     }

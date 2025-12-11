@@ -1,7 +1,9 @@
 public class ItemLinkedList {
     private ItemNode head;
 
-    public ItemLinkedList() { head = null; }
+    public ItemLinkedList() { 
+        head = null; 
+    }
 
     public void add(Item item) {
         ItemNode n = new ItemNode(item);

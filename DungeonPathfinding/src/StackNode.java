@@ -1,11 +1,16 @@
 public class StackNode {
     public String info;
     public StackNode next;
-    public StackNode(String info) { this.info = info; this.next = null; }
+    public StackNode(String info) { 
+        this.info = info; 
+        this.next = null; 
+    }
 }
 class PlayerStack {
     private StackNode top;
-    public PlayerStack() { top = null; }
+    public PlayerStack() { 
+        top = null; 
+    }
     public void push(String info) { 
         StackNode n = new StackNode(info); 
         n.next = top; 
@@ -21,7 +26,9 @@ class PlayerStack {
         if (top == null) return null; 
         return top.info; 
     }
-    public boolean isEmpty() { return top == null; }
+    public boolean isEmpty() { 
+        return top == null; 
+    }
     public int size() {
         int count = 0;
         StackNode t = top;

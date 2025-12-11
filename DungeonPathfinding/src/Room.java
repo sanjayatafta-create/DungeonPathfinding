@@ -7,10 +7,14 @@ public class Room {
     public Room east;
     public Room west;
 
-    private boolean hasItem;
-    private String itemName;
-    private int itemValue;
-
+    private boolean hasItem1;
+    private String itemName1;
+    private int itemValue1;
+    
+    private boolean hasItem2;
+    private String itemName2;
+    private int itemValue2;
+    
     private boolean hasMonster;
     private String monsterName;
     private int monsterDamage;
@@ -19,7 +23,7 @@ public class Room {
         this.id = id;
         this.name = name;
         north = null; south = null; east = null; west = null;
-        hasItem = false; itemName = null; itemValue = 0;
+        hasItem1 = false; hasItem2 = false;
         hasMonster = false; monsterName = null; monsterDamage = 0;
     }
 
@@ -27,32 +31,98 @@ public class Room {
     public String getName() { return name; }
 
     public void placeItem(String name, int value) { 
-        hasItem = true; 
-        itemName = name; 
-        itemValue = value; 
+        if (!hasItem1) {
+            hasItem1 = true;
+            itemName1 = name;
+            itemValue1 = value;
+        } else if (!hasItem2) {
+            hasItem2 = true;
+            itemName2 = name;
+            itemValue2 = value;
+        }
     }
     
-    public boolean hasItem() { return hasItem; }
+    public boolean hasItem() { 
+        return hasItem1 || hasItem2; 
+    }
     
-    // FIXED: Mengembalikan nama item TANPA menghapus state
     public String getItemName() { 
-        return hasItem ? itemName : null; 
+        if (hasItem1) {
+            return itemName1;
+        }
+        if (hasItem2) {
+            return itemName2;
+        }
+        return null;
     }
     
-    // FIXED: Mengembalikan value item TANPA menghapus state
     public int getItemValue() { 
-        return hasItem ? itemValue : 0; 
+        if (hasItem1) {
+            return itemValue1;
+        }
+        if (hasItem2) {
+            return itemValue2;
+        }
+        return 0;
     }
     
-    // FIXED: Method baru untuk mengambil item (menghapus state)
+    // MODIFIKASI: Ambil item yang ada
     public ItemInfo takeItem() {
-        if (!hasItem) return null;
+        if (hasItem1) {
+            ItemInfo info = new ItemInfo(itemName1, itemValue1);
+            hasItem1 = false;
+            itemName1 = null;
+            itemValue1 = 0;
+            return info;
+        }
         
-        ItemInfo info = new ItemInfo(itemName, itemValue);
-        hasItem = false;
-        itemName = null;
-        itemValue = 0;
-        return info;
+        if (hasItem2) {
+            ItemInfo info = new ItemInfo(itemName2, itemValue2);
+            hasItem2 = false;
+            itemName2 = null;
+            itemValue2 = 0;
+            return info;
+        }
+        
+        return null;
+    }
+    
+    public ItemInfo takeSpecificItem(String targetName) {
+        if (hasItem1 && itemName1.equalsIgnoreCase(targetName)) {
+            ItemInfo info = new ItemInfo(itemName1, itemValue1);
+            hasItem1 = false;
+            itemName1 = null;
+            itemValue1 = 0;
+            return info;
+        }
+        
+        if (hasItem2 && itemName2.equalsIgnoreCase(targetName)) {
+            ItemInfo info = new ItemInfo(itemName2, itemValue2);
+            hasItem2 = false;
+            itemName2 = null;
+            itemValue2 = 0;
+            return info;
+        }
+        
+        return null;
+    }
+    
+    public boolean hasSpecificItem(String itemName) {
+        return (hasItem1 && itemName1.equalsIgnoreCase(itemName)) || (hasItem2 && itemName2.equalsIgnoreCase(itemName));
+    }
+    
+    public void printAllItems() {
+        System.out.println("  Item di " + name + ":");
+        if (!hasItem1 && !hasItem2) {
+            System.out.println("    (kosong)");
+        } else {
+            if (hasItem1) {
+                System.out.printf("    1. %s (%d gold)\n", itemName1, itemValue1);
+            }
+            if (hasItem2) {
+                System.out.printf("    2. %s (%d gold)\n", itemName2, itemValue2);
+            }
+        }
     }
 
     public void placeMonster(String name, int dmg) { 
@@ -71,19 +141,18 @@ public class Room {
         monsterDamage = 0; 
     }
 
-    // UPDATE toString METHOD
     public String toString() {
-        return name + " (ID: " + id + ")";
+        int totalItems = (hasItem1 ? 1 : 0) + (hasItem2 ? 1 : 0);
+        return name + " (ID: " + id + ", Items: " + totalItems + ")";
     }
     
-    // TAMBAH METHOD BARU UNTUK MENDAPATKAN INFO LENGKAP
     public String getFullInfo() {
+        int totalItems = (hasItem1 ? 1 : 0) + (hasItem2 ? 1 : 0);
         return name + " [ID:" + id + "]" + 
-               (hasItem ? " [Item: " + itemName + "]" : "") + 
+               (totalItems > 0 ? " [Items: " + totalItems + "]" : "") + 
                (hasMonster ? " [Monster: " + monsterName + "]" : "");
     }
     
-    // INNER CLASS untuk menyimpan info item
     public static class ItemInfo {
         public final String name;
         public final int value;

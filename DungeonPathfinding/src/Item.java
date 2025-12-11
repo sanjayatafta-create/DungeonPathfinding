@@ -4,11 +4,19 @@ public class Item {
     private int value;
 
     public Item(String name, String desc, int value) {
-        this.name = name; this.desc = desc; this.value = value;
+        this.name = name; 
+        this.desc = desc;
+        this.value = value;
     }
 
-    public String getName() { return name; }
-    public int getValue() { return value; }
+    public String getName() { 
+        return name; 
+    }
+    public int getValue() { 
+        return value; 
+    }
 
-    public String toString() { return name + " (" + desc + ", value=" + value + ")"; }
+    public String toString() { 
+        return name + " (" + desc + ", value=" + value + ")"; 
+    }
 }

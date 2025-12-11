@@ -205,7 +205,7 @@ public class Main {
             System.out.println(" [14]  Istirahat");
             System.out.println(" [15]  Status game");
             System.out.println(" [16]  Exit game");
-            System.out.println("-".repeat(40));
+            System.out.println("-".repeat(80));
             System.out.print(">>> Pilih aksi (1-16): ");
 
             int choice = -1;
@@ -218,7 +218,6 @@ public class Main {
                 clearScreen();
                 continue;
             }
-
             clearScreen();
             
             switch (choice) {
@@ -481,11 +480,11 @@ public class Main {
                                 
                                 // Jika mengalahkan dragon
                                 if (monster.contains("Dragon")) {
-                                    System.out.println("\n" + "*".repeat(60));
+                                    System.out.println("\n" + "*".repeat(80));
                                     System.out.println("*" + " ".repeat(58) + "*");
                                     System.out.println("*" + " ".repeat(15) + "VICTORY! Kamu mengalahkan Dragon!" + " ".repeat(16) + "*");
                                     System.out.println("*" + " ".repeat(58) + "*");
-                                    System.out.println("*".repeat(60));
+                                    System.out.println("*".repeat(80));
                                     gameRunning = false;
                                 }
                             } else {
@@ -514,7 +513,7 @@ public class Main {
                         System.out.println("[STATS] Total value: " + inventory.totalValue() + " gold");
                         
                         System.out.println("\n[DETAIL] Daftar item:");
-                        System.out.println("-".repeat(50));
+                        System.out.println("-".repeat(80));
                         inventory.printAll();
                     }
                     break;
@@ -522,14 +521,14 @@ public class Main {
                 case 8:
                     printSubHeader("HISTORY PERJALANAN");
                     System.out.println("\n[INFO] Menampilkan " + history.size() + " aksi terakhir:");
-                    System.out.println("-".repeat(50));
+                    System.out.println("-".repeat(80));
                     history.printHistory();
                     break;
 
                 case 9:
                     printSubHeader("LOG AKSI");
                     System.out.println("\n[INFO] Menampilkan semua log aksi:");
-                    System.out.println("-".repeat(50));
+                    System.out.println("-".repeat(80));
                     logs.printQueue();
                     break;
 
@@ -583,7 +582,7 @@ public class Main {
                     }
                     
                     System.out.println("\n[DETAIL] Daftar item di inventory:");
-                    System.out.println("-".repeat(50));
+                    System.out.println("-".repeat(80));
                     inventory.printAll();
                     
                     System.out.print("\n>>> Masukkan nama item yang ingin dijual: ");
@@ -618,9 +617,9 @@ public class Main {
                         System.out.println("│       ↓                ↓                ↓           │");
                         System.out.println("│  [25] Throne Room  [13] Laboratory  [6] Library     │");
                         System.out.println("│       ↓                ↓                ↓           │");
-                        System.out.println("│  [30] Treasury ↔ [4] Poison Garden                 │");
-                        System.out.println("│       ↓                                            │");
-                        System.out.println("│  [50] Dragon's Lair                                │");
+                        System.out.println("│  [30] Treasury ↔ [4] Poison Garden                  │");
+                        System.out.println("│       ↓                                             │");
+                        System.out.println("│  [50] Dragon's Lair                                 │");
                         System.out.println("└─────────────────────────────────────────────────────┘");
                         System.out.println("\n[TIPS] Cari Crown di Throne Room untuk bonus melawan Dragon!");
                         System.out.println("[TIPS] Hati-hati dengan trap di Treasury tanpa peta!");
@@ -701,7 +700,7 @@ public class Main {
             
             // Jika masih berjalan, tunggu input untuk melanjutkan
             if (gameRunning) {
-                System.out.println("\n" + "=".repeat(60));
+                System.out.println("\n" + "=".repeat(80));
                 System.out.print(">>> Tekan Enter untuk melanjutkan...");
                 scan.nextLine();
                 clearScreen();
@@ -736,27 +735,27 @@ public class Main {
         System.out.println("  HP (" + player.getHp() + " x 2)     : " + (player.getHp() * 2) + " points");
         if (hasCrown) System.out.println("  Crown bonus         : 500 points");
         if (!boss.hasMonster()) System.out.println("  Victory bonus       : 1000 points");
-        System.out.println("  " + "-".repeat(40));
+        System.out.println("  " + "-".repeat(80));
         System.out.println("  TOTAL SKOR          : " + score + " points");
         
         System.out.println("\n[INVENTORY] Item akhir:");
-        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(80));
         if (inventory.isEmpty()) {
             System.out.println("  (Tidak ada item)");
         } else {
             inventory.sortByValueDesc();
             inventory.printAll();
-            System.out.println("  " + "-".repeat(40));
+            System.out.println("  " + "-".repeat(80));
             System.out.println("  Total value: " + inventory.totalValue() + " gold");
         }
         
         System.out.println("\n[HISTORY] 10 aksi terakhir:");
-        System.out.println("-".repeat(50));
+        System.out.println("-".repeat(80));
         logs.printLast(10);
         
-        System.out.println("\n" + "=".repeat(60));
+        System.out.println("\n" + "=".repeat(80));
         System.out.println("Terima kasih sudah bermain, " + player.getName() + "!");
-        System.out.println("=".repeat(60));
+        System.out.println("=".repeat(80));
         
         scan.close();
     }

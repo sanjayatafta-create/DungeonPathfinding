@@ -2,7 +2,10 @@ public class PlayerQueue {
     private QueueNode front;
     private QueueNode rear;
     
-    public PlayerQueue() { front = null; rear = null; }
+    public PlayerQueue() { 
+        front = null; 
+        rear = null; 
+    }
     
     public void enqueue(String action) {
         QueueNode n = new QueueNode(action);

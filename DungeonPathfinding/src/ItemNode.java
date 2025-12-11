@@ -1,5 +1,8 @@
 public class ItemNode {
     public Item data;
     public ItemNode next;
-    public ItemNode(Item data) { this.data = data; this.next = null; }
+    public ItemNode(Item data) { 
+        this.data = data; 
+        this.next = null; 
+    }
 }
