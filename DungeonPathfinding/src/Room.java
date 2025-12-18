@@ -22,9 +22,15 @@ public class Room {
     public Room(int id, String name) {
         this.id = id;
         this.name = name;
-        north = null; south = null; east = null; west = null;
-        hasItem1 = false; hasItem2 = false;
-        hasMonster = false; monsterName = null; monsterDamage = 0;
+        north = null; 
+        south = null; 
+        east = null; 
+        west = null;
+        hasItem1 = false; 
+        hasItem2 = false;
+        hasMonster = false; 
+        monsterName = null; 
+        monsterDamage = 0;
     }
 
     public int getId() { return id; }

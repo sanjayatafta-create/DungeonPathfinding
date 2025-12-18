@@ -263,7 +263,7 @@ public class Main {
                         directionName = "Barat";
                     }
                     else {
-                        System.out.println("[ERROR] Arah tidak valid! Gunakan n, s, e, atau w.");
+                        System.out.println("[ERROR] Arah tidak valid! Gunakan u, s, t, atau b.");
                         break;
                     }
 
@@ -292,7 +292,7 @@ public class Main {
                             logs.enqueue("Dragon terbangun di Dragon's Lair");
                         }
                         
-                        // Event random setiap 5 langkah
+                        // Event
                         if (steps % 5 == 0) {
                             int event = (int)(Math.random() * 3);
                             switch(event) {
@@ -438,7 +438,7 @@ public class Main {
                             System.out.println("[BONUS] Iron Sword (+10 damage)");
                         }
                         if (inventory.hasItem("Steel Shield")) {
-                            bonus -= 5;
+                            bonus += 5;
                             System.out.println("[BONUS] Steel Shield (-5 damage taken)");
                         }
                         if (hasCrown && current == boss) {
@@ -452,9 +452,9 @@ public class Main {
                         
                         if (yn.equalsIgnoreCase("y")) {
                             // Hitung peluang menang
-                            double winChance = 0.7;
+                            double winChance = 0.8;
                             if (player.getHp() < 30) {
-                                winChance = 0.4;
+                                winChance = 0.5;
                                 System.out.println("[WARNING] HP rendah! Peluang menang berkurang.");
                             }
                             if (inventory.hasItem("Potion of Strength")) {

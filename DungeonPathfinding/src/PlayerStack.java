@@ -6,7 +6,7 @@ public class PlayerStack {
     public void push(String info) { 
         StackNode n = new StackNode(info); 
         n.next = top; 
-        top = n; 
+        top = n;
     }
     public String pop() { 
         if (top == null) {

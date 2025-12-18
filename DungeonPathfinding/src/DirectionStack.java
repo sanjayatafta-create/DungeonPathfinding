@@ -4,7 +4,7 @@ public class DirectionStack {
         top = null; 
     }
     public void push(String room) { 
-        DirectionNode n = new DirectionNode(room); 
+        DirectionNode n = new DirectionNode(room);
         n.next = top; 
         top = n; 
     }
