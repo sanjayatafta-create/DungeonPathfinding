@@ -92,44 +92,6 @@ public class Room {
         
         return null;
     }
-    
-    public ItemInfo takeSpecificItem(String targetName) {
-        if (hasItem1 && itemName1.equalsIgnoreCase(targetName)) {
-            ItemInfo info = new ItemInfo(itemName1, itemValue1);
-            hasItem1 = false;
-            itemName1 = null;
-            itemValue1 = 0;
-            return info;
-        }
-        
-        if (hasItem2 && itemName2.equalsIgnoreCase(targetName)) {
-            ItemInfo info = new ItemInfo(itemName2, itemValue2);
-            hasItem2 = false;
-            itemName2 = null;
-            itemValue2 = 0;
-            return info;
-        }
-        
-        return null;
-    }
-    
-    public boolean hasSpecificItem(String itemName) {
-        return (hasItem1 && itemName1.equalsIgnoreCase(itemName)) || (hasItem2 && itemName2.equalsIgnoreCase(itemName));
-    }
-    
-    public void printAllItems() {
-        System.out.println("  Item di " + name + ":");
-        if (!hasItem1 && !hasItem2) {
-            System.out.println("    (kosong)");
-        } else {
-            if (hasItem1) {
-                System.out.printf("    1. %s (%d gold)\n", itemName1, itemValue1);
-            }
-            if (hasItem2) {
-                System.out.printf("    2. %s (%d gold)\n", itemName2, itemValue2);
-            }
-        }
-    }
 
     public void placeMonster(String name, int dmg) { 
         hasMonster = true; 
